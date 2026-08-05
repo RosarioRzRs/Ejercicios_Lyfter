@@ -1,0 +1,18 @@
+commit 13d7fab1e90053108250b19c77064e253cadebd0 (HEAD -> past-exercises, origin/past-exercises)
+Author: Rosario Ramirez <rosario_rzrs@hotmail.com>
+Date:   Tue Aug 4 18:02:42 2026 -0600
+
+    Uploading first exercises
+
+Este commit se genero cuando se subieron las carpetas de los ejercicios anteriores
+
+
+
+commit 9be6602995f497cc9d2d0b7b28894fbb75dd980d (origin/main, origin/HEAD, main)
+Author: RosarioRzRs <rosario_rzrs@hotmail.com>
+Date:   Tue Aug 4 17:14:12 2026 -0600
+
+    Initial commit
+
+
+Este commit se genero automáticamente con el archivo README.md
