@@ -26,7 +26,7 @@ def main():
             case 7: 
                 data.save_list_of_students('Sistema de Control de Estudiantes.csv',list_of_students)  
             case 8: 
-                data.read_list_of_students('Sistema de Control de Estudiantes.csv')
+                list_of_students = data.read_list_of_students('Sistema de Control de Estudiantes.csv')
             case 9: 
                 break
         input("\nPresione ENTER para continuar ")             
