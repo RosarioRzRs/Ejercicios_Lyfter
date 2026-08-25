@@ -161,13 +161,13 @@ def show_failing_students(list_of_students):
                 show_student = f"-Nombre  completo: {student.name}\n"
                 show_student += f"-Sección: {student.section}\n"
                 show_student += "Notas:\n"
-                if student['spanish_note'] < 60:
+                if student.spanish_note < 60:
                     show_student += f"-Español:  {student.spanish_note}\n"
-                if student['english_note'] < 60:
+                if student.english_note< 60:
                     show_student += f"-Inglés:   {student.english_note}\n"
-                if student['social_note'] < 60:
+                if student.social_note < 60:
                     show_student += f"-Sociales: {student.social_note}\n"
-                if student['science_note'] < 60:
+                if student.science_note < 60:
                     show_student += f"-Ciencias: {student.science_note}\n"
                 print(show_student)
     else:
