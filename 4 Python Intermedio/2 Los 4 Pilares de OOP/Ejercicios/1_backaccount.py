@@ -5,8 +5,8 @@ class BankAccount:
     def deposit_money(self, amount):
         self.balance += amount
 
-    def withdraw_money(self, amount):
-        self.balance -= amount
+    def withdraw_money(self):
+        pass
 
 #clase hija
 class SavingsAccount(BankAccount):
@@ -14,24 +14,23 @@ class SavingsAccount(BankAccount):
         self.min_balance = min_balance
 
     #se crea metodo para generar un error si con el retiro, balance queda por debajo de min_balance
-    def generate_error_by_min_balance(self,amount):
+    def withdraw_money(self,amount):
         try:
             if self.balance - amount < self.min_balance:
-                raise ValueError()
-            return True
+                raise ValueError("Retiro no permitido, balance quedaria debajo de min_balance")
+            self.balance -= amount
         except ValueError as ex:
-            print("Retiro no permitido, balance quedaria debajo de min_balance")
-            return False
+            print(ex)
+            
 
 #se inicializa valores de min_balace,  deposito y retiro
 min_balance = 2000
-deposit_money = 5000
-withdraw_money = 3001
+deposit_val = 5000
+withdraw_val = 3000
 #se crea objeto
 count_a = SavingsAccount(min_balance)
 #se deposita
-count_a.deposit_money(deposit_money)
-#se hace el retiro pero se corrobora que balnce no quede debajo de min_balance
-if count_a.generate_error_by_min_balance(withdraw_money):
-    count_a.withdraw_money(withdraw_money)
+count_a.deposit_money(deposit_val)
+#se  retira
+count_a.withdraw_money(withdraw_val)
 print(f"balance = {count_a.balance}")

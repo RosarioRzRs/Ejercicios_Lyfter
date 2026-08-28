@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-import math
+
 
 class Shape(ABC):
 
@@ -20,7 +20,7 @@ class Circle(Shape):
         return 2 * 3.1416 * self.radius
 
     def calculate_area(self):
-        return 3.1416 * math.sqrt(self.radius)
+        return 3.1416 * pow(self.radius, 2)
 
 class Square(Shape):
     def __init__(self, side):
