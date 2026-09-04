@@ -11,7 +11,7 @@ class User(ABC):
         pass
 
     @abstractmethod
-    def has_permission(self):
+    def has_permission(self, permission):
         pass
 #crear las clases hijas
 class AdminUser(User):
