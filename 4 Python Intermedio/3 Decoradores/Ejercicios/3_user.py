@@ -15,7 +15,6 @@ class User:
     def age(self):
         today = date.today()
         less_1 = (today.month, today.day) < (self.date_of_birth.month, self.date_of_birth.day)
-        print(less_1)
         return today.year - self.date_of_birth.year - less_1
 
 

@@ -4,15 +4,12 @@
 
 def only_numbers(func):
     def wrapper(*args):
-        ind = 0
-        try:
-            for record in args:
-                if not isinstance(record, (int, float)):
-                    raise ValueError("Hay por lo menos un elemento que no es un numero")
-            func(*args)
-        except ValueError as ex:
-            print(ex)
-          
+        for record in args:
+            if not isinstance(record, (int, float)):
+                raise ValueError("Hay por lo menos un elemento que no es un numero")
+
+        return func(*args)
+     
     return wrapper
 
 
@@ -24,6 +21,8 @@ def addition_list_of_number(*args):
         result += record
     print(f"La sumatoria total es: {result}")
 
-
-#addition_list_of_number( 3, 3.5, 8, 10 ,101)
-addition_list_of_number("Hola", 3, 3.5, "Tarea", "Prueba", "Laura")
+try:
+    addition_list_of_number( 3, 3.5, 8, 10 ,101)
+    # addition_list_of_number("Hola", 3, 3.5, "Tarea", "Prueba", "Laura")
+except ValueError as ex:
+    print(ex)

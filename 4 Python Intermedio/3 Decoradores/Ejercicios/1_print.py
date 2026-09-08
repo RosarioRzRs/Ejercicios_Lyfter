@@ -3,26 +3,28 @@
 
 
 def print_parameters_and_returns(func):
-    def wrapper(value):
-        print("******Lista Original*****")
-        for record in value:
-            print(record)
-        print("-----Lista de solo Numeros-----")
-        for record in func(value):
-            print(record)
+    def wrapper(*args, **kwargs):
+        print("******Parametros Originales*****")
+        print(args)
+        print(kwargs)
+        print("-----Parametros solo Numeros-----")
+        print(func(*args, **kwargs))
     return wrapper
 
 
 
 @print_parameters_and_returns
-def create_list_of_number(list_of_number):
-    new_list = []
-    for record in list_of_number:
+def save_only_number(*args, **kwargs):
+    list_of_number = []
+    for record in args:
         if isinstance(record, (int, float)):
-            new_list.append(record)
-    return new_list
+            list_of_number.append(record)
+    for value in kwargs.values():
+        if isinstance(value, (int, float)):
+            list_of_number.append(value)
+    return list_of_number
 
 
 
-my_list = ["Hola", 3, 3.5, "Tarea", "Prueba", "Laura"]
-create_list_of_number(my_list)
+
+save_only_number("Hola", 3, 3.5, "Tarea", "Prueba", "Laura", kwargs_1 = 5, kwargs_2 = 8.5, kwargs_3 = "World" )
