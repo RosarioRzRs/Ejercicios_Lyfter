@@ -6,7 +6,7 @@ def log_call(func):
     @wraps(func)
     def wrapper(*args):
         result = func(*args)
-        print(f"func: {func.__name__} - args: {args} - [{datetime.today()}] - Resultado: {result}")
+        print(f"func: {func.__name__} - args: {', '.join(str(a) for a in args)} - [{datetime.today()}] - Resultado: {result}")
         return result
     return wrapper
 

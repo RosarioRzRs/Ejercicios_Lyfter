@@ -6,7 +6,7 @@ def requires_login(func):
     def wrapper():
         try:
             if not user_logged_in:
-                raise ValueError("Usiario no autenticado")
+                raise ValueError("Usuario no autenticado")
             func()
         except ValueError as ex:
             print(ex)
