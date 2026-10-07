@@ -21,11 +21,15 @@ class LinkedList:
     def print_all(self):
         current_node = self.front
         message = ""
+        if current_node is None:
+            message = "Ningun nodo"
         while current_node is not None:
             message += str(current_node.data)
             if current_node.next is not None:
                 message += " -> "
             current_node = current_node.next
+
+        
         print(message)
 
     def insert_front(self, data):
@@ -54,7 +58,8 @@ class LinkedList:
         current_node = self.front
         if current_node.data == data:
             self.front = current_node.next
-            self.front.previous = None
+            if self.front is not None:
+                self.front.previous = None
         else:
             previous_node= current_node
             current_node = current_node.next
@@ -95,3 +100,14 @@ q.print_all()
 
 q.delete(10)
 q.print_all()
+
+
+q.delete(100)
+q.delete(35)
+q.delete(5)
+q.delete(30)
+q.print_all()
+
+q.delete(20)
+q.print_all()
+

@@ -19,7 +19,7 @@ class Queue:
         while current_node is not None:
             message += current_node.data
             if current_node.next is not None:
-                message += "-> "
+                message += " -> "
             current_node = current_node.next
         print(message)
 
@@ -37,9 +37,11 @@ class Queue:
 
     def dequeue(self):
         if self.head:
-          deleted_node = f"Nodo eliminado: {self.head.data}"
-          print(deleted_node)
+          deleted_node = self.head.data
+          message = f"Nodo eliminado: {self.head.data}"
+          print(message)
           self.head = self.head.next
+        return deleted_node
 
 
 q = Queue()

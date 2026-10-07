@@ -21,6 +21,8 @@ class Double_LinkedList:
     def print_forward(self):
         current_node = self.front
         message = ""
+        if current_node is None:
+            message = "Ningun nodo"
         while current_node is not None:
             message += current_node.data
             if current_node.next is not None:
@@ -32,6 +34,8 @@ class Double_LinkedList:
     def print_backward(self):
         current_node = self.back
         message = ""
+        if current_node is None:
+            message = "Ningun nodo"
         while current_node is not None:
             message += current_node.data
             if current_node.previous is not None:
@@ -65,7 +69,10 @@ class Double_LinkedList:
         current_node = self.front
         if current_node.data == data:
             self.front = current_node.next
-            self.front.previous = None
+            if self.front is None:
+                self.back = current_node.next
+            if self.front is not None:
+                self.front.previous = None
         else:
             previous_node= current_node
             current_node = current_node.next
@@ -94,5 +101,17 @@ dll.print_forward()
 dll.print_backward()
 
 dll.delete("B")
+dll.print_forward()
+dll.print_backward()
+
+dll.delete("C")
+dll.print_forward()
+dll.print_backward()
+
+dll.delete("A")
+dll.print_forward()
+dll.print_backward()
+
+dll.delete("X")
 dll.print_forward()
 dll.print_backward()
